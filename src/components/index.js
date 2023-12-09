@@ -5,3 +5,7 @@ export * from "./layout/Footer"
 // spinner
 export * from "./spinner/Spinner"
 export * from "./spinner/SpinnerImage"
+
+//-------- PAGES --------
+// Home
+export * from "./pages/home/Slider"

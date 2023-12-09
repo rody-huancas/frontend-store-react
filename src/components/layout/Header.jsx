@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // hooks
 import useShopping from "hooks/useShopping";
 // components
-import { SpinnerImage } from "components";
+import { Spinner } from "components";
 // icons
 import {
   RiMoonClearFill,
@@ -22,7 +21,7 @@ export const Header = () => {
       <div className="w-full px-10 xl:px-0 xl:w-[1200px] py-2 h-full flex justify-between items-center overflow-hidden">
         <Link to="/">
           {loader ? (
-            <SpinnerImage />
+            <Spinner />
           ) : (
             <img
               src={logo ? logo : "/images/logo-header.png"}
