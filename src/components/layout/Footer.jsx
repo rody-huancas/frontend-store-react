@@ -12,8 +12,12 @@ export const Footer = () => {
   const { addresses, city, email, facebook, instagram, phones } =
     config[0] || [];
 
-  const facebookUrl = facebook[0].toLowerCase().replace(/\s+/g, "");
-  const instagramUrl = instagram[0].toLowerCase().replace(/\s+/g, "");
+  const facebookUrl = facebook
+    ? facebook[0].toLowerCase().replace(/\s+/g, "")
+    : "";
+  const instagramUrl = instagram
+    ? instagram[0].toLowerCase().replace(/\s+/g, "")
+    : "";
 
   return (
     <div className="w-full bg-primary-100 py-16 md:py-2 md:h-56 overflow-hidden flex flex-col items-center justify-center gap-10">
