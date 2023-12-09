@@ -41,7 +41,7 @@ export const Header = () => {
                 <span className="hidden sm:block">Inicio</span>
               </Link>
               <Link
-                to={"/"}
+                to={"/about"}
                 className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
               >
                 <RiFolderHistoryLine className="sm:hidden text-xl" />

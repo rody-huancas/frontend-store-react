@@ -23,3 +23,13 @@ export const getAllSlider = async () => {
     console.log(error);
   }
 }
+
+// ABOUT
+export const getAllAbout = async () => {
+  try {
+    const { data } = await clienteAxios.get("/about");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
