@@ -28,7 +28,7 @@ export const Home = () => {
 
         <div className="w-full md:w-1/3 h-64">
           <img
-            src="/public/images/logo.png"
+            src="/images/logo.png"
             alt="Logo"
             className="w-full h-full object-cover rounded-xl"
           />
