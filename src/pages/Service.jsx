@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-
-// api
 import { getAllCategoryService, getAllService } from "api/api";
 import { CardService, Spinner } from "components";
 
 export const Service = () => {
   const [services, setServices] = useState([]);
   const [categoryServices, setCategoryServices] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
@@ -16,7 +15,13 @@ export const Service = () => {
         const serviceResponse = await getAllService();
         const categoryResponse = await getAllCategoryService();
         setServices(serviceResponse);
-        setCategoryServices(categoryResponse);
+        setCategoryServices(
+          categoryResponse.filter((category) =>
+            serviceResponse.some(
+              (service) => service.categoryService._id === category._id
+            )
+          )
+        );
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -27,10 +32,15 @@ export const Service = () => {
     fetchData();
   }, []);
 
-  // efecto al cambiar de pagina
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [selectedCategory]);
+
+  const filteredServices = selectedCategory
+    ? services.filter(
+        (service) => service.categoryService._id === selectedCategory._id
+      )
+    : services;
 
   return (
     <>
@@ -44,25 +54,37 @@ export const Service = () => {
             Nuestros Servicios
           </h1>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex items-center justify-center gap-5 flex-wrap">
+            <button
+              className={`${
+                !selectedCategory
+                  ? "bg-transparent border-2 border-primary-100 text-primary-100"
+                  : "bg-primary-300 text-white"
+              } py-2 px-5 rounded-xl uppercase font-medium`}
+              onClick={() => setSelectedCategory(null)}
+            >
+              Todos
+            </button>
             {categoryServices.map((category) => (
-              <div key={category._id} className="flex flex-col gap-5">
-                <h2 className="font-bold uppercase mt-5">{category.name}</h2>
-                <div
-                  className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-center place-content-center gap-5`}
-                >
-                  {services
-                    .filter(
-                      (service) => service.categoryService._id === category._id
-                    )
-                    .map((filteredService) => (
-                      <CardService
-                        key={filteredService._id}
-                        services={filteredService}
-                      />
-                    ))}
-                </div>
-              </div>
+              <button
+                key={category._id}
+                className={`${
+                  selectedCategory === category
+                    ? "bg-transparent border-2 border-primary-100 text-primary-100"
+                    : "bg-primary-300 text-white"
+                } py-2 px-5 rounded-xl uppercase font-medium`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center place-content-center gap-5`}
+          >
+            {filteredServices.map((service) => (
+              <CardService key={service._id} services={service} />
             ))}
           </div>
         </div>

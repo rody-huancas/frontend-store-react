@@ -26,6 +26,10 @@ export const DetailProduct = () => {
 
   const { category, description, image, price, name } = product;
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       {load ? (

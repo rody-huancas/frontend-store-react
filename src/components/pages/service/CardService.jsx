@@ -9,7 +9,7 @@ export const CardService = ({ services }) => {
   return (
     <div className="w-80 h-48 bg-white shadow-xl rounded-xl p-5 flex flex-col justify-between gap-4 overflow-hidden">
       <h3 className="font-bold text-lg uppercase text-center">{name}</h3>
-      <p>{description}</p>
+      <p className="text-center">{description}</p>
 
       {phones && (
         <a
