@@ -63,7 +63,7 @@ export const Header = () => {
                 <span className="hidden sm:block">Servicios</span>
               </Link>
               <Link
-                to={"/"}
+                to={"/contact"}
                 className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
               >
                 <RiMessage3Line className="sm:hidden text-xl" />
@@ -71,9 +71,9 @@ export const Header = () => {
               </Link>
             </div>
           </div>
-          <button className="text-gray-600">
+          {/* <button className="text-gray-600">
             <RiMoonClearFill />
-          </button>
+          </button> */}
         </nav>
       </div>
     </header>

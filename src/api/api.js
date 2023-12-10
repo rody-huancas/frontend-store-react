@@ -84,3 +84,13 @@ export const getProductById = async (id) => {
     console.log(error);
   }
 }
+
+// MESSAGE CONTACT
+export const registerContact = async (contactData) => {
+  try {
+    const { data } = await clienteAxios.post("/contact", contactData);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
