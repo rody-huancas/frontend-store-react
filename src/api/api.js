@@ -33,3 +33,23 @@ export const getAllAbout = async () => {
     console.log(error);
   }
 }
+
+// SERVICE
+export const getAllCategoryService = async () => {
+  try {
+    const { data } = await clienteAxios.get("/categoryServices");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// SERVICE
+export const getAllService = async () => {
+  try {
+    const { data } = await clienteAxios.get("/service");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}

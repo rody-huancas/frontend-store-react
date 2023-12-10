@@ -9,3 +9,6 @@ export * from "./spinner/SpinnerImage"
 //-------- PAGES --------
 // Home
 export * from "./pages/home/Slider"
+
+// Services
+export * from "./pages/service/CardService"

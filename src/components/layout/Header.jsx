@@ -10,6 +10,7 @@ import {
   RiFolderHistoryLine,
   RiShoppingCartLine,
   RiMessage3Line,
+  RiGridFill,
 } from "react-icons/ri";
 
 export const Header = () => {
@@ -53,6 +54,13 @@ export const Header = () => {
               >
                 <RiShoppingCartLine className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Productos</span>
+              </Link>
+              <Link
+                to={"/service"}
+                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+              >
+                <RiGridFill className="sm:hidden text-xl" />
+                <span className="hidden sm:block">Servicios</span>
               </Link>
               <Link
                 to={"/"}
