@@ -49,7 +49,7 @@ export const Service = () => {
           <Spinner />
         </div>
       ) : (
-        <div className="flex flex-col gap-5 text-gray-600 py-10">
+        <div className="flex flex-col gap-5 text-gray-600 dark:text-gray-100 py-10">
           <h1 className="text-center text-3xl font-extrabold uppercase">
             Nuestros Servicios
           </h1>
@@ -58,8 +58,8 @@ export const Service = () => {
             <button
               className={`${
                 !selectedCategory
-                  ? "bg-transparent border-2 border-primary-100 text-primary-100"
-                  : "bg-primary-300 text-white"
+                  ? "bg-transparent border-2 border-primary-100 text-primary-100 dark:text-gray-100 dark:border-gray-100"
+                  : "bg-primary-300 text-white dark:bg-gray-100 dark:text-primary-300"
               } py-2 px-5 rounded-xl uppercase font-medium`}
               onClick={() => setSelectedCategory(null)}
             >
@@ -70,8 +70,8 @@ export const Service = () => {
                 key={category._id}
                 className={`${
                   selectedCategory === category
-                    ? "bg-transparent border-2 border-primary-100 text-primary-100"
-                    : "bg-primary-300 text-white"
+                    ? "bg-transparent border-2 border-primary-100 text-primary-100 dark:text-gray-100 dark:border-gray-100"
+                    : "bg-primary-300 text-white dark:bg-gray-100 dark:text-primary-300"
                 } py-2 px-5 rounded-xl uppercase font-medium`}
                 onClick={() => setSelectedCategory(category)}
               >

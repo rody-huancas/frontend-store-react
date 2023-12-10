@@ -36,7 +36,7 @@ export const About = () => {
           <Spinner />
         </div>
       ) : (
-        <div className="my-10 text-gray-600 flex flex-col gap-10">
+        <div className="my-10 text-gray-600 dark:text-gray-100 flex flex-col gap-10">
           <h1 className="text-center text-3xl font-extrabold">{title}</h1>
           <div className="flex flex-col md:flex-row justify-between gap-10">
             <p className="w-full md:w-2/3">{description}</p>

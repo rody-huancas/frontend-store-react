@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { registerContact } from "api/api";
 import { Spinner } from "components";
 
@@ -88,8 +88,12 @@ export const Contact = () => {
     }
   };
 
+  // efecto al cambiar de pagina
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className="my-10 flex justify-center gap-10 text-gray-600">
+    <div className="my-10 flex justify-center gap-10 text-gray-600 dark:text-gray-100">
       <div className="w-full md:w-1/2 flex flex-col gap-5 px-5">
         <h1 className="text-center text-3xl font-extrabold uppercase">
           Contáctanos
@@ -181,7 +185,7 @@ export const Contact = () => {
       </div>
       <div className="w-1/3 hidden md:block">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7537973052868!2d-79.84440108950082!3d-6.799779066475553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef459bc7fe9f%3A0x86fdd96983a8a372!2sAmaru%20Inca%20Yupanqui%201083%2C%20La%20Victoria%2014007!5e0!3m2!1ses-419!2spe!4v1702193755603!5m2!1ses-419!2spe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.907619581229!2d-79.84874975698489!3d-6.781096748853069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef24d85d0459%3A0xb57f49c552e48fa4!2sLos%20Sauces%20144%2C%20Chiclayo%2014008!5e0!3m2!1ses-419!2spe!4v1702226970234!5m2!1ses-419!2spe"
           width="100%"
           height="500"
           style={{ border: 0 }}

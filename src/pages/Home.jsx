@@ -12,7 +12,7 @@ export const Home = () => {
       <Slider />
 
       <div className="flex flex-col md:flex-row md:justify-between gap-5 my-10">
-        <div className="w-full md:w-2/3 text-gray-600">
+        <div className="w-full md:w-2/3 text-gray-600 dark:text-gray-100">
           <div className="flex flex-col items-center gap-2">
             <h1 className="font-extrabold uppercase text-3xl text-center">
               Leugims Diseño Gráfico

@@ -7,7 +7,7 @@ export const CardService = ({ services }) => {
   const { phones } = config[0] || [];
 
   return (
-    <div className="w-80 h-48 bg-white shadow-xl rounded-xl p-5 flex flex-col justify-between gap-4 overflow-hidden">
+    <div className="w-80 h-48 bg-white dark:bg-gray-600 dark:text-gray-100 shadow-xl rounded-xl p-5 flex flex-col justify-between gap-4 overflow-hidden">
       <h3 className="font-bold text-lg uppercase text-center">{name}</h3>
       <p className="text-center">{description}</p>
 

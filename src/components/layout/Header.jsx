@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 // hooks
 import useShopping from "hooks/useShopping";
@@ -5,29 +6,41 @@ import useShopping from "hooks/useShopping";
 import { Spinner } from "components";
 // icons
 import {
-  RiMoonClearFill,
   RiHomeLine,
   RiFolderHistoryLine,
   RiShoppingCartLine,
   RiMessage3Line,
   RiGridFill,
 } from "react-icons/ri";
+import { BiSolidSun } from "react-icons/bi";
+import { PiMoonStarsFill } from "react-icons/pi";
 
 export const Header = () => {
-  const { config, loader } = useShopping();
+  const { config, loader, isDarkMode, toggleDarkMode } = useShopping();
   const { logo } = config[0] || [];
+
+  // agregar o quitar la clase dark al body
+  useEffect(() => {
+    const body = document.body;
+    isDarkMode ? body.classList.add("dark") : body.classList.remove("dark");
+    body.style.backgroundColor = isDarkMode ? "#1a202c" : "#f8fafc";
+    return () => {
+      body.classList.remove("dark");
+      body.style.backgroundColor = "";
+    };
+  }, [isDarkMode]);
 
   return (
     <header className="w-full h-20 flex items-center justify-center">
       <div className="w-full px-10 xl:px-0 xl:w-[1200px] py-2 h-full flex justify-between items-center overflow-hidden">
-        <Link to="/">
+        <Link to="/" className="">
           {loader ? (
             <Spinner />
           ) : (
             <img
               src={logo ? logo : "/images/logo-header.png"}
               alt="Logo Leugims"
-              className="w-32 rounded-lg object-cover"
+              className="w-32 rounded-lg object-cover dark:bg-white dark:h-16"
             />
           )}
         </Link>
@@ -36,44 +49,62 @@ export const Header = () => {
             <div className="flex items-center justify-center gap-10 sm:gap-3 px-10 py-5 bg-white shadow-xl sm:shadow-none rounded-xl sm:bg-transparent sm:rounded-none sm:p-0">
               <Link
                 to={"/"}
-                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+                className={`font-medium sm:text-gray-600 ${
+                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                } flex items-center justify-center gap-2`}
               >
                 <RiHomeLine className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Inicio</span>
               </Link>
+
               <Link
                 to={"/about"}
-                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+                className={`font-medium sm:text-gray-600 ${
+                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                } flex items-center justify-center gap-2`}
               >
                 <RiFolderHistoryLine className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Nosotros</span>
               </Link>
               <Link
                 to={"/products"}
-                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+                className={`font-medium sm:text-gray-600 ${
+                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                } flex items-center justify-center gap-2`}
               >
                 <RiShoppingCartLine className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Productos</span>
               </Link>
               <Link
                 to={"/service"}
-                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+                className={`font-medium sm:text-gray-600 ${
+                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                } flex items-center justify-center gap-2`}
               >
                 <RiGridFill className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Servicios</span>
               </Link>
               <Link
                 to={"/contact"}
-                className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
+                className={`font-medium sm:text-gray-600 ${
+                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                } flex items-center justify-center gap-2`}
               >
                 <RiMessage3Line className="sm:hidden text-xl" />
                 <span className="hidden sm:block">Contacto</span>
               </Link>
             </div>
           </div>
-          {/* <button className="text-gray-600">
-            <RiMoonClearFill />
-          </button> */}
+          <button
+            onClick={toggleDarkMode}
+            className="text-gray-600 dark:text-gray-100 mode-theme"
+          >
+            {isDarkMode ? (
+              <BiSolidSun className="mode-theme" />
+            ) : (
+              <PiMoonStarsFill className="mode-theme" />
+            )}
+          </button>
         </nav>
       </div>
     </header>

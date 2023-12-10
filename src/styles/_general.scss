@@ -12,3 +12,15 @@
     right: 0;
   }
 }
+
+.mode-theme {
+  color: var(--color-toggle);
+  font-size: 1.25rem;
+  animation: icon-dark 0.7s ease;
+}
+
+@keyframes icon-dark {
+  from {
+    transform: rotate(-120deg);
+  }
+}
