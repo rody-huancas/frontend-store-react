@@ -74,3 +74,13 @@ export const getAllProduct = async () => {
     console.log(error);
   }
 }
+
+// PRODUCT BY ID
+export const getProductById = async (id) => {
+  try {
+    const { data } = await clienteAxios.get(`/product/${id}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}

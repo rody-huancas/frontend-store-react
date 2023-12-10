@@ -10,7 +10,7 @@ export const CardProduct = ({ product }) => {
   const { config } = useShopping();
   const { phones } = config[0] || [];
 
-  const { image, name, price } = product;
+  const { _id, image, name, price } = product;
 
   return (
     <div className="w-full sm:w-[330px] xl:w-96 h-96 bg-white shadow-lg rounded-xl flex flex-col items-center gap-4 overflow-hidden relative item_product">
@@ -33,7 +33,10 @@ export const CardProduct = ({ product }) => {
         )}
       </div>
 
-      <Link className="absolute top-10 right-0 lg:-right-10 bg-red-400 text-white p-3 rounded-l-md btn_view transition-all duration-500 ease-in-out btn_view">
+      <Link
+        to={`/product/${_id}`}
+        className="absolute top-10 right-0 lg:-right-10 bg-red-400 text-white p-3 rounded-l-md btn_view transition-all duration-500 ease-in-out btn_view"
+      >
         <RiEyeFill />
       </Link>
     </div>
