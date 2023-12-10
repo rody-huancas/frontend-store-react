@@ -27,6 +27,11 @@ export const Service = () => {
     fetchData();
   }, []);
 
+  // efecto al cambiar de pagina
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       {load ? (

@@ -34,7 +34,7 @@ export const getAllAbout = async () => {
   }
 }
 
-// SERVICE
+// SERVICE CATRGORY
 export const getAllCategoryService = async () => {
   try {
     const { data } = await clienteAxios.get("/categoryServices");
@@ -48,6 +48,27 @@ export const getAllCategoryService = async () => {
 export const getAllService = async () => {
   try {
     const { data } = await clienteAxios.get("/service");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+// SERVICE CATRGORY PRODUCT
+export const getAllProductCategory = async () => {
+  try {
+    const { data } = await clienteAxios.get("/category");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// PRODUCTS
+export const getAllProduct = async () => {
+  try {
+    const { data } = await clienteAxios.get("/product");
     return data;
   } catch (error) {
     console.log(error);

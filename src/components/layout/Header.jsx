@@ -49,7 +49,7 @@ export const Header = () => {
                 <span className="hidden sm:block">Nosotros</span>
               </Link>
               <Link
-                to={"/"}
+                to={"/products"}
                 className="font-medium sm:text-gray-600 flex items-center justify-center gap-2"
               >
                 <RiShoppingCartLine className="sm:hidden text-xl" />

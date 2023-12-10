@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 // components
 import { Slider } from "components";
 
 export const Home = () => {
+  // efecto al cambiar de pagina
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <>
       <Slider />

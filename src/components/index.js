@@ -12,3 +12,6 @@ export * from "./pages/home/Slider"
 
 // Services
 export * from "./pages/service/CardService"
+
+// Producrs
+export * from "./pages/products/CardProduct"

@@ -25,6 +25,10 @@ export const About = () => {
 
   const { description, mision, title, vision } = about[0] || [];
 
+  // efecto al cambiar de pagina
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <>
       {load ? (
