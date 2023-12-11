@@ -45,56 +45,62 @@ export const Header = () => {
           )}
         </Link>
         <nav className="flex items-center gap-3">
-          <div className="flex items-center justify-center sm:justify-start fixed sm:relative bottom-5 sm:bottom-0 left-1/2 sm:left-0 right-1/2 sm:ring-0 z-50">
-            <div className="flex items-center justify-center gap-10 sm:gap-3 px-10 py-5 bg-white shadow-xl sm:shadow-none rounded-xl sm:bg-transparent sm:rounded-none sm:p-0">
+          <div className="flex items-center justify-center md:justify-start fixed md:relative bottom-5 md:bottom-0 left-1/2 md:left-0 right-1/2 md:ring-0 z-50">
+            <div className="flex items-center justify-center gap-10 md:gap-3 px-10 py-5 bg-white shadow-xl md:shadow-none rounded-xl md:bg-transparent md:rounded-none md:p-0">
               <Link
                 to={"/"}
-                className={`font-medium sm:text-gray-600 ${
-                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                className={`font-medium md:text-gray-600 ${
+                  isDarkMode ? "dark:md:text-gray-100 dark:text-gray-600" : ""
                 } flex items-center justify-center gap-2`}
               >
-                <RiHomeLine className="sm:hidden text-xl" />
-                <span className="hidden sm:block">Inicio</span>
+                <RiHomeLine className="md:hidden text-xl" />
+                <span className="hidden md:block">Inicio</span>
               </Link>
 
               <Link
                 to={"/about"}
-                className={`font-medium sm:text-gray-600 ${
-                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                className={`font-medium md:text-gray-600 ${
+                  isDarkMode ? "dark:md:text-gray-100 dark:text-gray-600" : ""
                 } flex items-center justify-center gap-2`}
               >
-                <RiFolderHistoryLine className="sm:hidden text-xl" />
-                <span className="hidden sm:block">Nosotros</span>
+                <RiFolderHistoryLine className="md:hidden text-xl" />
+                <span className="hidden md:block">Nosotros</span>
               </Link>
               <Link
                 to={"/products"}
-                className={`font-medium sm:text-gray-600 ${
-                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                className={`font-medium md:text-gray-600 ${
+                  isDarkMode ? "dark:md:text-gray-100 dark:text-gray-600" : ""
                 } flex items-center justify-center gap-2`}
               >
-                <RiShoppingCartLine className="sm:hidden text-xl" />
-                <span className="hidden sm:block">Productos</span>
+                <RiShoppingCartLine className="md:hidden text-xl" />
+                <span className="hidden md:block">Productos</span>
               </Link>
               <Link
                 to={"/service"}
-                className={`font-medium sm:text-gray-600 ${
-                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                className={`font-medium md:text-gray-600 ${
+                  isDarkMode ? "dark:md:text-gray-100 dark:text-gray-600" : ""
                 } flex items-center justify-center gap-2`}
               >
-                <RiGridFill className="sm:hidden text-xl" />
-                <span className="hidden sm:block">Servicios</span>
+                <RiGridFill className="md:hidden text-xl" />
+                <span className="hidden md:block">Servicios</span>
               </Link>
               <Link
                 to={"/contact"}
-                className={`font-medium sm:text-gray-600 ${
-                  isDarkMode ? "dark:sm:text-gray-100 dark:text-gray-600" : ""
+                className={`font-medium md:text-gray-600 ${
+                  isDarkMode ? "dark:md:text-gray-100 dark:text-gray-600" : ""
                 } flex items-center justify-center gap-2`}
               >
-                <RiMessage3Line className="sm:hidden text-xl" />
-                <span className="hidden sm:block">Contacto</span>
+                <RiMessage3Line className="md:hidden text-xl" />
+                <span className="hidden md:block">Contacto</span>
               </Link>
             </div>
           </div>
+          <a
+            href="https://leugims.000webhostapp.com/tienda_virtual/"
+            className="bg-primary-100 px-4 py-3 rounded-lg text-white"
+          >
+            Ir a la Tienda
+          </a>
           <button
             onClick={toggleDarkMode}
             className="text-gray-600 dark:text-gray-100 mode-theme"

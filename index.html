@@ -2,12 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="/store/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="PWA moderna con React.js" />
+    <link rel="stylesheet" href="/store/icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Leugims</title>
   </head>
-  <body class="bg-gray-100 dark">
+  <body class="bg-gray-100">
     <div id="root"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("serviceworker.js")
+            .then((reg) => console.log("success: ", reg.scope))
+            .catch((err) => console.log(err));
+        });
+      }
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

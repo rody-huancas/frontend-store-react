@@ -39,7 +39,7 @@ export const About = () => {
         <div className="my-10 text-gray-600 dark:text-gray-100 flex flex-col gap-10">
           <h1 className="text-center text-3xl font-extrabold">{title}</h1>
           <div className="flex flex-col md:flex-row justify-between gap-10">
-            <p className="w-full md:w-2/3">{description}</p>
+            <p className="w-full md:w-2/3 text-justify">{description}</p>
             <div className="w-full md:w-1/3 h-72 md:h-60 overflow-hidden">
               <img
                 src="/images/logo.png"
@@ -52,11 +52,11 @@ export const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div className="flex flex-col gap-5">
               <span className="font-bold text-xl uppercase">Misión</span>
-              <p>{mision}</p>
+              <p className="text-justify">{mision}</p>
             </div>
             <div className="flex flex-col gap-5">
               <span className="font-bold text-xl uppercase">Visión</span>
-              <p>{vision}</p>
+              <p className="text-justify">{vision}</p>
             </div>
           </div>
         </div>

@@ -98,7 +98,7 @@ export const Contact = () => {
         <h1 className="text-center text-3xl font-extrabold uppercase">
           Contáctanos
         </h1>
-        <p>
+        <p className="text-justify">
           En Leugims, estamos aquí para convertir tus ideas en impactantes obras
           de arte visual. ¿Listo para darle un impulso único a tu marca?
           ¿Necesitas una presencia en línea que destaque? ¡Nosotros lo hacemos
