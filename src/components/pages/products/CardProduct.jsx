@@ -20,7 +20,7 @@ export const CardProduct = ({ product }) => {
           {name.length > 50 ? `${name.slice(0, 50)}...` : name}
         </h4>
         <span className="text-primary-100 font-bold dark:text-gray-100">
-          {formatearDinero(price)}
+          S/ {price}
         </span>
         {phones && (
           <a

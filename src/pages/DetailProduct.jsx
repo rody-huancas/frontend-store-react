@@ -37,8 +37,8 @@ export const DetailProduct = () => {
           <Spinner />
         </div>
       ) : (
-        <div className="flex justify-center gap-10 my-16 text-gray-600">
-          <div className="w-1/2 p-5 rounded-xl shadow-xl bg-white">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 my-16 text-gray-600 dark:text-white">
+          <div className="w-full sm:w-1/2 p-5 rounded-xl shadow-xl bg-white">
             <img
               src={`${image}`}
               alt={name}
@@ -46,16 +46,16 @@ export const DetailProduct = () => {
             />
           </div>
 
-          <div className="w-1/2 flex flex-col gap-5">
+          <div className="w-full sm:w-1/2 flex flex-col gap-5">
             <h1 className="font-extrabold text-3xl uppercase">{name}</h1>
             <div className="flex flex-col gap-2">
               <p className="text-xl font-medium uppercase">{description}</p>
               <p className="uppercase font-bold text-md">
                 Categoría:{" "}
-                <span className="text-primary-100">{category.name}</span>
+                <span className="text-primary-100 dark:text-gray-100">{category.name}</span>
               </p>
-              <span className="text-xl font-bold text-primary-100">
-                {formatearDinero(price)}
+              <span className="text-xl font-bold text-primary-100 dark:text-gray-100">
+                S/ {price}
               </span>
             </div>
 
