@@ -46,7 +46,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`w-full h-20 flex items-center justify-center ${isScrolled ? "lg:fixed lg:top-0 lg:z-50 lg:shadow-lg lg:bg-white" : ""}`}>
+    <header className={`w-full h-20 flex items-center justify-center ${isScrolled ? "md:fixed md:top-0 md:z-50 md:shadow-md md:bg-white md:dark:bg-dark-100" : ""}`}>
       <div className="w-full px-10 xl:px-0 xl:w-[1200px] py-2 h-full flex justify-between items-center overflow-hidden">
         <Link to="/" className="">
           {loader ? (

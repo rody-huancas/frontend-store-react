@@ -59,7 +59,7 @@ export const Slider = () => {
         </div>
       ) : (
         slider.length > 0 && (
-          <div className="relative mt-5">
+          <div className="relative mt-12">
             <div
               style={{
                 backgroundImage: `url(${slider[currentIndex]?.image})`,

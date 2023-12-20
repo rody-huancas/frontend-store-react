@@ -13,7 +13,7 @@ export const CardProduct = ({ product }) => {
   const { _id, image, name, price } = product;
 
   return (
-    <div className="w-full sm:w-[330px] xl:w-96 h-96 bg-white dark:bg-gray-600 dark:text-gray-100 shadow-lg rounded-xl flex flex-col items-center gap-4 overflow-hidden relative item_product">
+    <div className="w-full sm:w-[330px] xl:w-96 h-96 bg-white dark:bg-gray-800 dark:text-gray-100 shadow-lg rounded-xl flex flex-col items-center gap-4 overflow-hidden relative item_product">
       <img src={`${image}`} alt={name} className="w-full h-56 object-cover" />
       <div className="w-full flex flex-col items-center gap-2 px-5">
         <h4 className="font-medium text-md text-center uppercase">
