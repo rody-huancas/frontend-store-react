@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // hooks
 import useShopping from "hooks/useShopping";
@@ -18,6 +18,8 @@ import { PiMoonStarsFill } from "react-icons/pi";
 export const Header = () => {
   const { config, loader, isDarkMode, toggleDarkMode } = useShopping();
   const { logo } = config[0] || [];
+  
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // agregar o quitar la clase dark al body
   useEffect(() => {
@@ -30,8 +32,21 @@ export const Header = () => {
     };
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 96);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full h-20 flex items-center justify-center">
+    <header className={`w-full h-20 flex items-center justify-center ${isScrolled ? "lg:fixed lg:top-0 lg:z-50 lg:shadow-lg lg:bg-white" : ""}`}>
       <div className="w-full px-10 xl:px-0 xl:w-[1200px] py-2 h-full flex justify-between items-center overflow-hidden">
         <Link to="/" className="">
           {loader ? (
